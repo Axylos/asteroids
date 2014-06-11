@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title></title>
+    <script src = "asteroids.js"></script>
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        a = new Asteroids.MovingObject({x: 200, y: 200}, {x: 10, y: 10}, 50, "pink");
+        
+        b = new Asteroids.MovingObject({x: 250, y: 230}, {x: 10, y: 10}, 50, "black");
+        
+        c = new Asteroids.MovingObject({x: 270, y: 250}, {x: 10, y: 10}, 50, "blue");
+        a.render(canvas.getContext('2d'));
+        b.render(canvas.getContext('2d'));
+        c.render(canvas.getContext('2d'));
+        
+        
+        
+        
+      }
+    </script>
+  </head>
+  <body>
+  <canvas id="canvas" width="800" height="800">
+
+</html>
