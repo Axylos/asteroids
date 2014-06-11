@@ -9,6 +9,17 @@
     this.color = color;
   }
   
+  MovingObject.prototype.isOffscreen = function(dimX, dimY) {
+      if (   this.pos.x < this.radius * -1 
+          || this.pos.x > dimX + this.radius
+          || this.pos.y < this.radius * -1
+          || this.pos.y > dimY + this.radius) {
+        return true
+      } else {
+        return false;
+      }
+  }
+  
   MovingObject.prototype.move = function(dimX, dimY) {
     this.pos.x = this.pos.x + this.vel.x;
     this.pos.y = this.pos.y + this.vel.y;

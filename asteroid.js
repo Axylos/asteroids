@@ -10,10 +10,16 @@
   Asteroid.COLOR = "pink";
   Asteroid.RADIUS = 45;
   
-  Asteroid.randomAsteroid = function(dimX, dimY) {
+  Asteroid.randomAsteroid = function(dimX, dimY, ship) {
     var pos = {x: Math.random() * dimX, y: Math.random() * dimY};
     var vel = {x: Math.random() * 3, y: Math.random() * 3};
-    return new Asteroid(pos, vel, Asteroid.RADIUS, Asteroid.COLOR);
+    var newAsteroid = new Asteroid(pos, vel, Asteroid.RADIUS, Asteroid.COLOR);
+    
+    if(ship.isCollidedWith(newAsteroid)) {
+      return Asteroid.randomAsteroid(dimX, dimY, ship);
+    } else {
+      return newAsteroid;
+    }
   };
   
 })(this);

@@ -45,7 +45,13 @@
   Ship.prototype.power = function(impulse) {
     this.vel.x += impulse * Math.cos(this.heading);
     this.vel.y -= impulse * Math.sin(this.heading);
-    console.log(this.vel);
+  }
+  
+  Ship.prototype.fireBullet = function() {
+    var x = this.pos.x + (this.radius + 1) * Math.cos(this.heading);
+    var y = this.pos.y - (this.radius + 1) * Math.sin(this.heading);
+    var bullet = new Asteroids.Bullet({x: x, y: y}, this.heading);
+    return bullet;
   }
   
 })(this)
