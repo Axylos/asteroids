@@ -73,7 +73,7 @@
     if (this.asteroids.some(function (asteroid) {
       return asteroid.isCollidedWith(that.ship);
     })) {
-      alert("You suck. Realy hard. And the game's over. Okay. Great. Super duper. Stop. Don't.");
+      alert("You Lost!  Sorry :( Try again soon!");
       clearInterval(this.gameIntervalId);
     }
   }
